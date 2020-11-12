@@ -1,0 +1,32 @@
+﻿@model List<CrudJeudi.Context.customer>
+
+
+@{
+    ViewBag.Title = "CustomerList";
+}
+
+<h2>Liste des utilisateurs</h2>
+
+<table class="table">
+    <tr>
+        <th>Prénom</th>
+        <th>Nom</th>
+        <th>Email</th>
+        <th>Action</th>
+    </tr>
+    @foreach(var c in Model)
+    {
+    <tr>
+        <td>@c.firstname</td>
+        <td>@c.lastname</td>
+        <td>@c.email</td>
+        <td>@c.mobile</td>
+        <td>
+            <a href="" class="btn btn-success">Editer</a>
+            <a href="" >supprimer</a>
+        </td>
+    </tr>
+
+    }
+</table>
+
