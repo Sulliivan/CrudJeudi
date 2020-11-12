@@ -89,3 +89,4 @@ C:\Users\Sullivan\source\repos\CrudJeudi\CrudJeudi\obj\Debug\CrudJeudi.csproj.Co
 C:\Users\Sullivan\source\repos\CrudJeudi\CrudJeudi\obj\Debug\CrudJeudi.csproj.CopyComplete
 C:\Users\Sullivan\source\repos\CrudJeudi\CrudJeudi\obj\Debug\CrudJeudi.dll
 C:\Users\Sullivan\source\repos\CrudJeudi\CrudJeudi\obj\Debug\CrudJeudi.pdb
+C:\Users\Sullivan\source\repos\CrudJeudi\CrudJeudi\bin\fr\EntityFramework.SqlServer.resources.dll

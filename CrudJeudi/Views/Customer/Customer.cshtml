@@ -1,0 +1,31 @@
+﻿@model CrudJeudi.Context.customer
+
+@{
+    ViewBag.Title = "Customer";
+}
+
+<h2>Customer</h2>
+
+@using (Html.BeginForm("AddCustomer", "Customer", FormMethod.Post))
+{
+    <div class="form-group">
+        <label>Prénom</label>
+        @Html.TextBoxFor(M => M.firstname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Nom</label>
+        @Html.TextBoxFor(M => M.lastname, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Email</label>
+        @Html.TextBoxFor(M => M.email, new { @class = "form-control" })
+    </div>
+    <div class="form-group">
+        <label>Mobil</label>
+        @Html.TextBoxFor(M => M.mobile, new { @class = "form-control" })
+    </div>
+
+    <button class="btn btn-primary" type="submit">
+        enregistrer
+    </button>
+}
