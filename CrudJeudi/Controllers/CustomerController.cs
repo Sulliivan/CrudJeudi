@@ -59,5 +59,14 @@ namespace CrudJeudi.Controllers
             ModelState.Clear();
             return View("Customer");
         }
+
+        public ActionResult Delete(int id)
+        {
+            var customer = db.customer.Where(c => c.Id == id).First();
+            db.customer.Remove(customer);
+            db.SaveChanges();
+            var customers = db.customer.ToList();
+            return View("Customerlist",customers);
+        }
     }
 }

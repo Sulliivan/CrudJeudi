@@ -22,8 +22,8 @@
         <td>@c.email</td>
         <td>@c.mobile</td>
         <td>
-            <a href="" class="btn btn-success">Editer</a>
-            <a href="" >supprimer</a>
+            <a href="@Url.Action("Customer", new { c.Id, c.firstname, c.lastname, c.email, c.mobile } )" class="btn btn-success">Editer</a>
+            <a href="@Url.Action("Delete", new { c.Id } )" >supprimer</a>
         </td>
     </tr>
 
