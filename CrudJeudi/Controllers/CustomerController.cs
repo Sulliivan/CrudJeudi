@@ -33,10 +33,31 @@ namespace CrudJeudi.Controllers
             return View(customer);
         }
 
+
+
+
+        [HttpGet]
+
         public ActionResult Customer()
         {
 
             return View();
+        }
+
+
+
+
+        [HttpPost]
+        public ActionResult AddCustomer(customer form)
+        {
+            customer obj = new customer();
+            obj.firstname = form.firstname;
+            obj.lastname = form.lastname;
+            obj.email = form.email;
+            obj.mobile = form.mobile;
+            db.customer.Add(obj);
+            db.SaveChanges();
+            return View("Customer");
         }
     }
 }
