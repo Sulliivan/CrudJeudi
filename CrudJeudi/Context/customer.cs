@@ -11,12 +11,18 @@ namespace CrudJeudi.Context
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel.DataAnnotations;
+
     public partial class customer
     {
         public int Id { get; set; }
+        [Required(ErrorMessage ="Prénom obligatoire")]
         public string firstname { get; set; }
         public string lastname { get; set; }
+        [Required(ErrorMessage = "Email obligatoire")]
+        [EmailAddress]
+       // [MinLength(10, ErrorMessage = "")]
+
         public string email { get; set; }
         public int mobile { get; set; }
     }

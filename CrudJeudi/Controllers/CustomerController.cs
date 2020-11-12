@@ -34,8 +34,6 @@ namespace CrudJeudi.Controllers
         }
 
 
-
-
         [HttpGet]
 
         public ActionResult Customer()
@@ -45,11 +43,11 @@ namespace CrudJeudi.Controllers
         }
 
 
-
-
         [HttpPost]
         public ActionResult AddCustomer(customer form)
         {
+            if (ModelState.IsValid)
+            {
             customer obj = new customer();
             obj.firstname = form.firstname;
             obj.lastname = form.lastname;
@@ -57,6 +55,8 @@ namespace CrudJeudi.Controllers
             obj.mobile = form.mobile;
             db.customer.Add(obj);
             db.SaveChanges();
+            }
+            ModelState.Clear();
             return View("Customer");
         }
     }
