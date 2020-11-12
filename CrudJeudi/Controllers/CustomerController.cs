@@ -1,6 +1,7 @@
 ﻿using CrudJeudi.Context;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web;
@@ -43,7 +44,6 @@ namespace CrudJeudi.Controllers
             
             else
                 return View();
-            
         }
 
 
@@ -53,15 +53,25 @@ namespace CrudJeudi.Controllers
             if (ModelState.IsValid)
             {
             customer obj = new customer();
+            obj.Id = form.Id;
             obj.firstname = form.firstname;
             obj.lastname = form.lastname;
             obj.email = form.email;
             obj.mobile = form.mobile;
+            if(form.Id == 0)
+            {
             db.customer.Add(obj);
             db.SaveChanges();
+                }
+                else
+                {
+                    db.Entry(obj).State = EntityState.Modified;
+                    db.SaveChanges();
+                }
             }
             ModelState.Clear();
-            return View("Customer");
+            var customers = db.customer.ToList();
+            return View("Customerlist", customers);
         }
 
         public ActionResult Delete(int id)

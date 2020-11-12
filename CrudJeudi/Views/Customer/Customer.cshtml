@@ -1,5 +1,4 @@
 ﻿@model CrudJeudi.Context.customer
-
 @{
     ViewBag.Title = "Customer";
 }
@@ -13,6 +12,7 @@
 @using (Html.BeginForm("AddCustomer", "Customer", FormMethod.Post))
 {
     <div class="form-group">
+        @Html.HiddenFor( m => m.Id)
         <label>Prénom</label>
         @Html.ValidationMessageFor(v => v.firstname, "prenom obligatoire", new { @class = "error" })
         @Html.TextBoxFor(M => M.firstname, new { @class = "form-control" })
