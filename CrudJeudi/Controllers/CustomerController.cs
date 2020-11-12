@@ -36,10 +36,14 @@ namespace CrudJeudi.Controllers
 
         [HttpGet]
 
-        public ActionResult Customer()
+        public ActionResult Customer(customer obj)
         {
-
-            return View();
+            if (obj != null)
+                return View(obj); 
+            
+            else
+                return View();
+            
         }
 
 
